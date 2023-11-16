@@ -1,0 +1,13 @@
+{% extends 'prague/_layout.html' %}
+{% block content %}
+    <ul class="columns">
+        {% for wc in  wc_list %}
+               <li>
+                   <a href="{{ wc.get_absolute_url }}">{{ wc }}</a>
+               </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block map %}
+{% endblock %}

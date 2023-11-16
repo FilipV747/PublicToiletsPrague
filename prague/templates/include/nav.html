@@ -1,0 +1,12 @@
+{% load static %}
+<div class="navbar">
+    <div class="logo">
+        <a href="{% url 'prague:index' %}"><img src="{% static 'images/navbar_logo_new.png' %}" alt="Logo" /></a>
+    </div>
+    <div class="menu">
+        <a href="{% url 'prague:index' %}">All Public Toilets</a>
+        <a href="{% url 'prague:free_toilets' %}">Search FREE Toilets only</a>
+        <a href="{% url 'prague:toilets' %}">List of Addresses</a>
+    </div>
+</div>
+

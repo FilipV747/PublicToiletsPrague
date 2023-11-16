@@ -1,0 +1,24 @@
+<div class="review-form">
+   <h4>Submit Your Review:</h4>
+   <form method="POST" action="{% url 'prague:toilet_detail' slug=toilet.slug %}">
+        {% csrf_token %}
+
+        {{ form.username.label }}: {{ form.username }}<br>
+        {{ form.content.label }}: {{ form.content }}<br>
+
+        {% for value, star in form.rating.field.choices %}
+            <input type="radio"
+                   id="ratingChoice{{ value }}"
+                   name="{{ form.rating.name }}"
+                   value="{{ value }}"
+                   {% if form.rating.value == value %}checked{% endif %}>
+
+            <label for="ratingChoice{{ value }}">
+                {{ star }} ★
+            </label>
+        {% endfor %}
+       <button class="button is-light">Send</button>
+   </form>
+</div>
+
+

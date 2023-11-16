@@ -1,0 +1,13 @@
+    <div class="reviews">
+       {% for review in reviews %}
+            <div class="review">
+                <blockquote>
+                  {{ review.content }}
+                  <footer>
+                    <cite>- {{ review.username }}</cite>
+                  </footer>
+                </blockquote>
+                <small>Posted on: {{ review.date_posted }}</small>
+            </div>
+        {% endfor %}
+    </div>
